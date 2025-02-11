@@ -1,4 +1,4 @@
-﻿#if ZENJECT
+﻿#if !ZENJECT
 namespace AXitUnityTemplate.AssetLoader.Runtime.Installer
 {
     using UnityEngine;

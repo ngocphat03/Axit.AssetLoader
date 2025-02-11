@@ -1,4 +1,6 @@
-﻿namespace AXitUnityTemplate.AssetLoader.Runtime.Utilities
+﻿using AXitUnityTemplate.AssetLoader.Runtime.Loader;
+
+namespace AXitUnityTemplate.AssetLoader.Runtime.Utilities
 {
     using UnityEngine;
     using AXitUnityTemplate.AssetLoader.Runtime.Interface;
@@ -30,6 +32,19 @@
                 }
                 DependencyLocator.assetLoader = value;
             }
+        }
+
+        public static IAssetLoader Resolve()
+        {
+            if (DependencyLocator.assetLoader != null) return DependencyLocator.assetLoader;
+            
+            
+#if ADDRESSABLES_ASSET_LOADED
+            DependencyLocator.AssetLoader = new AddressableAssetLoader();
+#else
+            DependencyLocator.AssetLoader = new ResourceAssetLoader();
+#endif
+            return DependencyLocator.assetLoader;
         }
     }
 }
