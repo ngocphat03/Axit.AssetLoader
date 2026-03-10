@@ -6,7 +6,7 @@ The `AXitAssetLoader` is a flexible asset management system designed to work wit
 
 1. Open Unity and go to **Package Manager** via **Windows > Package Manager**.
 2. Click on the **Plus (+)** icon > **Add Package from git URL**.
-3. Paste the following link in the URL field: `https://github.com/ngocphat03/AssetLoader.git`
+3. Paste the following link in the URL field: `https://github.com/ngocphat03/Axit.AssetLoader.git`
 4. Click **Add** to install the package into your project.
 
 # **Required Symbols:**
